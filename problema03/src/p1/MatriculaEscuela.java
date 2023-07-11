@@ -9,16 +9,32 @@ package p1;
  *
  * @author reroes
  */
-public class MatriculaEscuela {
-    private double tarifa;
-    
+public class MatriculaEscuela extends Matricula{
+    private double costoLibros;
+    private double costoDeportes;
+    private double costoFolletos;
+    private double costoUniformes;
+
+    public MatriculaEscuela(double costoLibros, double costoDeportes, double costoFolletos, double costoUniformes) {
+        this.costoLibros = costoLibros;
+        this.costoDeportes = costoDeportes;
+        this.costoFolletos = costoFolletos;
+        this.costoUniformes = costoUniformes;
+    }
+
     public void establecerTarifa(){
         // tarifa = costo libros + costo deportes + costo folletos + 
         //          costo uniformes
-        tarifa = 50.2 + 40.2 + 140.2 + 200.4;
+        super.setTarifa(costoLibros+costoDeportes+costoFolletos+costoUniformes);
     }
-        
-    public double obtenerTarifa(){
-        return tarifa;
+
+    @Override
+    public String toString() {
+        return "MatriculaEscuela{" +
+                "costoLibros=" + costoLibros +
+                ", costoDeportes=" + costoDeportes +
+                ", costoFolletos=" + costoFolletos +
+                ", costoUniformes=" + costoUniformes +
+                '}'+super.toString();
     }
 }

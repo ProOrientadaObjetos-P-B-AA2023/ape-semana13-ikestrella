@@ -9,16 +9,28 @@ package p1;
  *
  * @author reroes
  */
-public class MatriculaMaternal {
-    private double tarifa;
-    
-        
+public class MatriculaMaternal extends Matricula{
+    private double costoDesayunos;
+    private double costoAlmuerzo;
+    private double costoMedico;
+
+    public MatriculaMaternal(double costoDesayunos, double costoAlmuerzo, double costoMedico) {
+        this.costoDesayunos = costoDesayunos;
+        this.costoAlmuerzo = costoAlmuerzo;
+        this.costoMedico = costoMedico;
+    }
+
     public void establecerTarifa(){
         // tarifa = costo desayunos + costo almuerzo + costo medico
-        tarifa = 50.2 + 40.2 + 80.2;
+        super.setTarifa(costoDesayunos+costoAlmuerzo+costoMedico);
     }
-        
-    public double obtenerTarifa(){
-        return tarifa;
+
+    @Override
+    public String toString() {
+        return "MatriculaMaternal{" +
+                "costoDesayunos=" + costoDesayunos +
+                ", costoAlmuerzo=" + costoAlmuerzo +
+                ", costoMedico=" + costoMedico +
+                '}'+super.toString();
     }
 }

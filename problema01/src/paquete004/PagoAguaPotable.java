@@ -10,21 +10,34 @@ import paquete001.Persona;
  *
  * @author reroes
  */
-public class PagoAguaPotable {
-    public double calcularPago(String tipo){
-        double pago = 0;
-        if(tipo.equals("comercial")){
-            double tarifaFija = 2.20;
-            double metrosCubicosConsumo = 100.2;
-            double costoConsumoCubicos = 0.2;
+public class PagoAguaPotable extends Pago{
+    String tipo;
+    double tarifaFija;
+    double metrosCubicosConsumo;
+    double costoConsumoCubicos;
+
+    public PagoAguaPotable(String tipo, double tarifaFija, double metrosCubicosConsumo, double costoConsumoCubicos) {
+        this.tipo = tipo;
+        this.tarifaFija = tarifaFija;
+        this.metrosCubicosConsumo = metrosCubicosConsumo;
+        this.costoConsumoCubicos = costoConsumoCubicos;
+    }
+
+    public void calcularPago(){
+        if(tipo.equals("COMERCIAL")){
             pago = tarifaFija + (metrosCubicosConsumo * costoConsumoCubicos) + 15;
         }else{
-            double tarifaFija = 2.20;
-            double metrosCubicosConsumo = 100.2;
-            double costoConsumoCubicos = 0.2;
             pago = tarifaFija + (metrosCubicosConsumo * costoConsumoCubicos);
         }
-        
-        return pago;
+    }
+
+    @Override
+    public String toString() {
+        return "PagoAguaPotable{" +
+                "tipo='" + tipo + '\'' +
+                ", tarifaFija=" + tarifaFija +
+                ", metrosCubicosConsumo=" + metrosCubicosConsumo +
+                ", costoConsumoCubicos=" + costoConsumoCubicos + super.toString()+
+                '}';
     }
 }

@@ -12,6 +12,9 @@ public class DatosTelefono {
     /*
     
     */
+
+    public DatosTelefono() {}
+
     public static double[][] datos(){
         double[][] informacion = {
             {6.0, 200.2, 0.2},

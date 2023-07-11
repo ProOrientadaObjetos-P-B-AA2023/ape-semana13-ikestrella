@@ -12,6 +12,9 @@ public class DatosPropiedades {
     /*
     
     */
+
+    public DatosPropiedades() {}
+
     public static double[][] datos(){
         double[][] informacion = {
             {120000, 10},
